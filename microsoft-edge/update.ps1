@@ -25,9 +25,8 @@ function global:au_GetLatest {
   $version_number = $version_node.'data-version'
   $full_version   = $version_node.outerText.Trim()
   #generate download urls
-  $download_url_32 = Invoke-WebRequest -Uri "$($artifact_base_url)?productname=$($version)&osname=Windows&osversion=$($artifact_arch32)"
-  $download_url_64 = Invoke-WebRequest -Uri "$($artifact_base_url)?productname=$($version)&osname=Windows&osversion=$($artifact_arch64)"
-  
+  $download_url_32 = Invoke-WebRequest -Uri "$($artifact_base_url)?productname=$($full_version)&osname=Windows&osversion=$($artifact_arch32)"
+  $download_url_64 = Invoke-WebRequest -Uri "$($artifact_base_url)?productname=$($full_version)&osname=Windows&osversion=$($artifact_arch64)"
   $Latest = @{URL32 = $download_url_32; URL64 = $download_url_64; Version = $version_number; }
   return $Latest
 }

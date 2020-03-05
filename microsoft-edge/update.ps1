@@ -18,15 +18,24 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  #get contents of the download page (HTML)
+  # get contents of the download page (HTML)
   $download_scrape_content = Invoke-WebRequest -Uri $download_scrape_url
-  #select the first version from the version list - this should be the latest version
-  $version_node   = ($download_scrape_content.AllElements | ? {$_.value -eq $download_scrape_version -and $_.'data-version' -ne $null} | select -first 1)
-  $version_number = $version_node.'data-version'
-  $full_version   = $version_node.outerText.Trim()
-  #generate download urls
-  $download_url_32 = Invoke-WebRequest -Uri "$($artifact_base_url)?productname=$($full_version)&osname=Windows&osversion=$($artifact_arch32)"
-  $download_url_64 = Invoke-WebRequest -Uri "$($artifact_base_url)?productname=$($full_version)&osname=Windows&osversion=$($artifact_arch64)"
+  
+  # grab the JSON containing all version/download information
+  $json_node = ($download_scrape_content.AllElements | ? {$_.id -eq 'commercial-json-data'} | select -first 1)
+  $json_data = $json_node.'data-whole-json' | ConvertFrom-Json
+  
+  # select the release version (Dev/Beta/Stable)
+  $download_url_data = $json_data | ? {$_.Product -eq $download_scrape_version}
+  
+  # select the first version per architecture from the JSON - this should be the latest version
+  $download_32_data = $download_url_data.Releases | ? {$_.Architecture -eq $artifact_arch32} | select -first 1
+  $download_64_data = $download_url_data.Releases | ? {$_.Architecture -eq $artifact_arch64} | select -first 1
+  $download_url_32 = $download_32_data.Artifacts[0].Location
+  $download_url_64 = $download_64_data.Artifacts[0].Location
+    
+  $version_number = $download_32_data.ProductVersion.Trim()
+  
   $Latest = @{URL32 = $download_url_32; URL64 = $download_url_64; Version = $version_number; }
   return $Latest
 }

@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-edge</id>
-    <version>79.0.309.71</version>
+    <version>80.0.361.66</version>
     <owners>Dennis Gaida</owners>
     <title>Microsoft Edge</title>
     <authors>Microsoft</authors>
@@ -16,11 +16,8 @@
     <projectSourceUrl>https://thirdpartysource.microsoft.com/</projectSourceUrl>
     <tags>edge microsoft browser stable chromium</tags>
     <summary>Microsoft Edge browser, based on the Chromium open source browser.</summary>
-    <description><![CDATA[
-This package is the stable version of the Microsoft Edge browser, based on the Chromium open source browser. Portions of this browser are based on Third Party Open source software. The entire list of Microsoft utilized open source is available at https://thirdpartysource.microsoft.com/ while the portions and licenses specific to Edge are available at edge://credits/ once installed.
-    
-**Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
-    ]]></description>
+    <description><![CDATA[This package is the stable version of the Microsoft Edge browser, based on the Chromium open source browser. Portions of this browser are based on Third Party Open source software. The entire list of Microsoft utilized open source is available at https://thirdpartysource.microsoft.com/ while the portions and licenses specific to Edge are available at edge://credits/ once installed.
+]]></description>
       <releaseNotes>https://www.microsoftedgeinsider.com/en-us/whats-new</releaseNotes>
   </metadata>
   <files>

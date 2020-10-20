@@ -29,8 +29,8 @@ function global:au_GetLatest {
   $download_url_data = $json_data | ? {$_.Product -eq $download_scrape_version}
   
   # select the first version per architecture from the JSON - this should be the latest version
-  $download_32_data = $download_url_data.Releases | ? {$_.Architecture -eq $artifact_arch32} | select -first 1
-  $download_64_data = $download_url_data.Releases | ? {$_.Architecture -eq $artifact_arch64} | select -first 1
+  $download_32_data = $download_url_data.Releases | ? {$_.Architecture -eq $artifact_arch32 -and $_.Platform -eq "Windows"} | select -first 1
+  $download_64_data = $download_url_data.Releases | ? {$_.Architecture -eq $artifact_arch64 -and $_.Platform -eq "Windows"} | select -first 1
   $download_url_32 = $download_32_data.Artifacts[0].Location
   $download_hash_32 = $download_32_data.Artifacts[0].Hash
   $download_url_64 = $download_64_data.Artifacts[0].Location

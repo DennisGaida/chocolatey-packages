@@ -20,4 +20,21 @@ $packageArgs = @{
   validExitCodes = @(0, 3010, 1641)
 }
 
-Install-ChocolateyPackage @packageArgs
+$32Path = Join-Path -Path ${Env:ProgramFiles(x86)} -ChildPath 'Microsoft\Edge\Application\msedge.exe'
+$64Path = Join-Path -Path $Env:ProgramFiles -ChildPath 'Microsoft\Edge\Application\msedge.exe'
+
+if (Test-Path $32Path)
+{
+  [Version]$InstalledVersion = (Get-ItemProperty -Path $32Path).VersionInfo.ProductVersion
+}
+if (Test-Path $64Path)
+{
+  [Version]$InstalledVersion = (Get-ItemProperty -Path $64Path).VersionInfo.ProductVersion
+}
+
+$UpdateNeeded = $InstalledVersion -lt [Version]$Env:ChocolateyPackageVersion
+
+if ($UpdateNeeded -or $Env:ChocolateyForce)
+{
+  Install-ChocolateyPackage @packageArgs
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>ente-auth</id>
+    <version>2.0.48</version>
+    <owners>Dennis Gaida</owners>
+    <title>Ente Auth</title>
+    <authors>ente Technologies</authors>
+    <projectUrl>https://github.com/ente-io/ente/tree/main/auth</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ente-io/ente/main/auth/assets/icons/auth-icon.png</iconUrl>
+    <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/ente-auth</packageSourceUrl>
+    <licenseUrl>https://github.com/ente-io/ente/blob/main/LICENSE</licenseUrl>
+    <docsUrl>https://github.com/ente-io/ente/tree/main/auth#readme</docsUrl>
+    <projectSourceUrl>https://github.com/ente-io/ente/tree/main/auth</projectSourceUrl>
+    <tags>ente auth 2fa authenticator totp</tags>
+    <summary>An end-to-end encrypted, cross platform and free app for storing your 2FA codes with cloud backups.</summary>
+    <description><![CDATA[This package is the current version of the Ende Auth 2FA app. An end-to-end encrypted, cross platform and free app for storing your 2FA codes with cloud backups. Works offline. You can even use it without signing up for an account if you don't want the cloud backups or multi-device sync.]]></description>
+      <releaseNotes>https://github.com/ente-io/ente/releases?q=tag%3Aauth-v</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

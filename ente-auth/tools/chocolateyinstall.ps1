@@ -14,7 +14,7 @@ $packageArgs = @{
   checksum       = 'f591585ac992239b43d82e9b7e8fc25f64ef304792d4880fe5d82fd3b3fded8a'
   checksumType   = 'sha256'
 
-  silentArgs     = "{0} /VERYSILENT /LOG=`"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`""
+  silentArgs     = "{0} /VERYSILENT /SUPPRESSMSGBOXES /LOG=`"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`""
   validExitCodes = @(0)
 }
 

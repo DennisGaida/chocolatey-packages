@@ -1,4 +1,4 @@
-Import-Module chocolatey-au
+Import-Module au
 $download_api_url     = "https://edgeupdates.microsoft.com/api/products"
 $release_branch       = "Stable"
 

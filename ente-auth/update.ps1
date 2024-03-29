@@ -1,4 +1,4 @@
-Import-Module chocolatey-au
+Import-Module au
 $release_url           = "https://api.github.com/repos/ente-io/ente/releases?per_page=5"
 $ente_auth_tag_prefix  = "auth-v"
 

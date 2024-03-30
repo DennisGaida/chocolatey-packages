@@ -7,7 +7,7 @@
     <title>Ente Auth</title>
     <authors>ente Technologies</authors>
     <projectUrl>https://github.com/ente-io/ente/tree/main/auth</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/ente-io/ente/main/auth/assets/icons/auth-icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/master/ente-auth/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/ente-auth</packageSourceUrl>
     <licenseUrl>https://github.com/ente-io/ente/blob/main/LICENSE</licenseUrl>
     <docsUrl>https://github.com/ente-io/ente/tree/main/auth#readme</docsUrl>

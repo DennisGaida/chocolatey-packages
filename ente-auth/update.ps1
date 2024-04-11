@@ -2,6 +2,17 @@ Import-Module au
 $release_url           = "https://api.github.com/repos/ente-io/ente/releases?per_page=5"
 $ente_auth_tag_prefix  = "auth-v"
 
+function global:au_SearchReplace {
+  @{
+    'tools\chocolateyInstall.ps1' = @{
+      "(^[$]url64\s*=\s*)('.*')"              = "`$1'$($Latest.URL64)'"
+      "(^[$]url32\s*=\s*)('.*')"              = "`$1'$($Latest.URL32)'"
+      "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
+      "(?i)(^\s*checksum64\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum64)'"
+    }
+   }
+}
+
 function global:au_BeforeUpdate() {
   $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
 }

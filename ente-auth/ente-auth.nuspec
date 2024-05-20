@@ -2,11 +2,11 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ente-auth</id>
-    <version>2.0.50</version>
+    <version>3.0.3</version>
     <owners>Dennis Gaida</owners>
     <title>Ente Auth</title>
     <authors>ente Technologies</authors>
-    <projectUrl>https://github.com/ente-io/ente/tree/main/auth</projectUrl>
+    <projectUrl>https://ente.io/auth/</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/master/ente-auth/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/ente-auth</packageSourceUrl>
     <licenseUrl>https://github.com/ente-io/ente/blob/main/LICENSE</licenseUrl>

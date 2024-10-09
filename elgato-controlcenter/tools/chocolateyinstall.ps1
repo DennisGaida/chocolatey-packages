@@ -1,0 +1,34 @@
+﻿
+$ErrorActionPreference = 'Stop';
+$url32 = 'https://edge.elgato.com/egc/windows/eccw/1.7.1/ControlCenter_1.7.1.600_x64.msi'
+
+$pp = Get-PackageParameters
+
+$packageArgs = @{
+  packageName    = $env:ChocolateyPackageName
+  fileType       = 'msi'
+  url            = $url32
+
+  softwareName   = 'Elgato Control Center'
+
+  # checksum       = 'ebf3f660d241c8d9363a4c0fb2518312dc0501d1870af532f7204a7c368f5d07'
+  # checksumType   = 'sha256'
+
+  silentArgs     = "/quiet /lv `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`""
+  validExitCodes = @(0, 3010, 1641)
+}
+
+$InstallPath = Join-Path -Path ${Env:ProgramFiles} -ChildPath 'Elgato\ControlCenter\ControlCenter.exe'
+
+if (Test-Path $InstallPath)
+{
+  # get the installed version number, removing build information from the version number
+  [Version]$InstalledVersion = (Get-ItemProperty -Path $InstallPath).VersionInfo.ProductVersion
+}
+
+$UpdateNeeded = $InstalledVersion -lt [Version]$Env:ChocolateyPackageVersion
+
+if ($UpdateNeeded -or $Env:ChocolateyForce)
+{
+  Install-ChocolateyPackage @packageArgs
+}

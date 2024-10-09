@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>elgato-controlcenter</id>
+    <version>1.7.1</version>
+    <owners>Dennis Gaida</owners>
+    <title>Elgato Control Center</title>
+    <authors>Corsair GmbH</authors>
+    <projectUrl>https://www.elgato.com/us/en/s/downloads/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/master/elgato-controlcenter/icon.png</iconUrl>
+    <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/elgato-controlcenter</packageSourceUrl>
+    <copyright>Corsair Memory, Inc.</copyright>
+    <docsUrl>https://help.elgato.com/hc/en-us/sections/360004115951-Elgato-Control-Center-Software</docsUrl>
+    <tags>elgato controlcenter lighting keylight</tags>
+    <summary>Elgato Camera Hub is a software tool designed to optimize video capturing with Elgato webcams as well as control the Elgato Prompter. It provides extensive customization options to enhance the quality of your live broadcasts or recordings.</summary>
+    <description><![CDATA[Elgato Camera Hub is a software tool designed to optimize video capturing with Elgato webcams as well as control the Elgato Prompter. It provides extensive customization options to enhance the quality of your live broadcasts or recordings.]]></description>
+      <releaseNotes>https://help.elgato.com/hc/en-us/sections/4586833941261-Elgato-Control-Center-Release-Notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

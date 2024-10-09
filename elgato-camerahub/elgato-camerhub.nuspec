@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>elgato-camerahub</id>
+    <version>1.11</version>
+    <owners>Dennis Gaida</owners>
+    <title>Elgato Camera Hub</title>
+    <authors>Corsair GmbH</authors>
+    <projectUrl>https://www.elgato.com/de/de/s/downloads/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/master/elgato-camerahub/icon.png</iconUrl>
+    <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/elgato-camerahub</packageSourceUrl>
+    <copyright>Corsair Memory, Inc.</copyright>
+    <docsUrl>https://help.elgato.com/hc/en-us/sections/360013950972-Elgato-Camera-Hub-Software</docsUrl>
+    <tags>elgato camerahub prompter</tags>
+    <summary>Elgato Camera Hub is a software tool designed to optimize video capturing with Elgato webcams as well as control the Elgato Prompter. It provides extensive customization options to enhance the quality of your live broadcasts or recordings.</summary>
+    <description><![CDATA[Elgato Camera Hub is a software tool designed to optimize video capturing with Elgato webcams as well as control the Elgato Prompter. It provides extensive customization options to enhance the quality of your live broadcasts or recordings.]]></description>
+      <releaseNotes>https://help.elgato.com/hc/en-us/sections/4880787756941-Elgato-Camera-Hub-Release-Notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

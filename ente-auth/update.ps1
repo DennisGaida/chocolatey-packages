@@ -16,7 +16,7 @@ function global:au_BeforeUpdate() {
 }
 
 function global:au_GetLatest {
-  # get contents of the Edge download API response
+  # get contents of the download API response
   $download_release_content =  (Invoke-WebRequest $release_url).Content
     
   # grab the JSON containing all version/download information

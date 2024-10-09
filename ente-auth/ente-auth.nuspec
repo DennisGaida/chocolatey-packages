@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ente-auth</id>
-    <version>3.0.3</version>
+    <version>4.0.2.20241009</version>
     <owners>Dennis Gaida</owners>
     <title>Ente Auth</title>
     <authors>ente Technologies</authors>
@@ -14,7 +14,8 @@
     <projectSourceUrl>https://github.com/ente-io/ente/tree/main/auth</projectSourceUrl>
     <tags>ente auth 2fa authenticator totp</tags>
     <summary>An end-to-end encrypted, cross platform and free app for storing your 2FA codes with cloud backups.</summary>
-    <description><![CDATA[This package is the current version of the Ende Auth 2FA app. An end-to-end encrypted, cross platform and free app for storing your 2FA codes with cloud backups. Works offline. You can even use it without signing up for an account if you don't want the cloud backups or multi-device sync.]]></description>
+    <description><![CDATA[This package is the current version of the Ende Auth 2FA app. An end-to-end encrypted, cross platform and free app for storing your 2FA codes with cloud backups. Works offline. You can even use it without signing up for an account if you don't want the cloud backups or multi-device sync.
+]]></description>
       <releaseNotes>https://github.com/ente-io/ente/releases?q=tag%3Aauth-v</releaseNotes>
   </metadata>
   <files>

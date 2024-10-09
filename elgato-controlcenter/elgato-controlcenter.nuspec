@@ -13,7 +13,10 @@
     <docsUrl>https://help.elgato.com/hc/en-us/sections/360004115951-Elgato-Control-Center-Software</docsUrl>
     <tags>elgato controlcenter lighting keylight</tags>
     <summary>Elgato Camera Hub is a software tool designed to optimize video capturing with Elgato webcams as well as control the Elgato Prompter. It provides extensive customization options to enhance the quality of your live broadcasts or recordings.</summary>
-    <description><![CDATA[Elgato Camera Hub is a software tool designed to optimize video capturing with Elgato webcams as well as control the Elgato Prompter. It provides extensive customization options to enhance the quality of your live broadcasts or recordings.]]></description>
+    <description><![CDATA[This package wraps the current version of the Elgato Control Center app. Elgato Control Center is a software tool that allows users to easily adjust the lighting settings of their Elgato devices. It provides an intuitive interface to control brightness, color temperature, and other lighting parameters, making it ideal for streamers and content creators.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+]]></description>
       <releaseNotes>https://help.elgato.com/hc/en-us/sections/4586833941261-Elgato-Control-Center-Release-Notes</releaseNotes>
   </metadata>
   <files>

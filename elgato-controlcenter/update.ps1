@@ -5,14 +5,14 @@ $product_name           = "cc-win"
 function global:au_SearchReplace {
   @{
     'tools\chocolateyInstall.ps1' = @{
-      "(^[$]url32\s*=\s*)('.*')"              = "`$1'$($Latest.URL32)'"
-      "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum32)'"
+      "(^[$]url64\s*=\s*)('.*')"                  = "`$1'$($Latest.URL64)'"
+      "(?i)(^\s*[$]?checksum64\s*=\s*)('.*')"     = "`$1'$($Latest.Checksum64)'"
     }
    }
 }
 
 function global:au_BeforeUpdate() {
-  $Latest.Checksum32 = Get-RemoteChecksum $Latest.Url32
+  $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
 }
 
 function global:au_GetLatest {
@@ -28,8 +28,9 @@ function global:au_GetLatest {
   # get version number from JSON array by product name
   $version_number = $json_data.$product_name.version
   
-  $Latest = @{ URL32 = $download_url; Version = $version_number}
+  $Latest = @{ URL64 = $download_url; Version = $version_number}
   return $Latest
 }
 
-update
+# Run AU Update, specify checksum if not all checksums should be calculated
+Update -ChecksumFor 64

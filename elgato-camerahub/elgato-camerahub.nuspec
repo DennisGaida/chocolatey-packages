@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>elgato-camerahub</id>
-    <version>1.11.0.20241009</version>
+    <version>1.11</version>
     <owners>Dennis Gaida</owners>
     <title>Elgato Camera Hub</title>
     <authors>Corsair GmbH</authors>

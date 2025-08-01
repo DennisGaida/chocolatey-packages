@@ -33,4 +33,4 @@ function global:au_GetLatest {
 }
 
 # Run AU Update, specify checksum if not all checksums should be calculated
-Update -ChecksumFor 64
+Update-Package -ChecksumFor 64

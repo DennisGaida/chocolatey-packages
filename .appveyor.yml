@@ -44,6 +44,7 @@ environment:
     secure: sQurW03hbYRKvL2ZTJY7gEwJ7mmOsI2h6E5AyqBOfTxMYvpBhZVuXQ7RY7z2u7iO # https://ci.appveyor.com/tools/encrypt
 
 init:
+- git config --global user.email "2392217+DennisGaida@users.noreply.github.com"
 - git config --global user.name "DennisGaida"
 - git config --global core.safecrlf false
 

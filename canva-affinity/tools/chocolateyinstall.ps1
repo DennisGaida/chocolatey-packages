@@ -5,12 +5,12 @@ $url64 = 'https://downloads.affinity.studio/Affinity%20x64.exe'
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   fileType       = 'exe'
-  url            = $url64
+  url64bit       = $url64
 
   softwareName   = 'Affinity'
 
-  checksum       = ''
-  checksumType   = 'sha256'
+  checksum64     = '26194FB7AB0C83754549C99951B2DBBDC0361278172D02BB55EAF6B42A100409'
+  checksumType64 = 'sha256'
 
   validExitCodes = @(0)
 }

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>canva-affinity</id>
+    <version>3.0.0</version>
+    <owners>Dennis Gaida</owners>
+    <title>Canva Affinity</title>
+    <authors>Canva</authors>
+    <projectUrl>https://www.affinity.studio/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/master/canva-affinity/icon.svg</iconUrl>
+    <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/canva-affinity</packageSourceUrl>
+    <licenseUrl>https://www.canva.com/policies/</licenseUrl>
+    <docsUrl>https://www.affinity.studio/help/</docsUrl>
+    <tags>affinity canva vector photoeditor pagelayout</tags>
+    <summary>An end-to-end encrypted, cross platform and free app for storing your 2FA codes with cloud backups.</summary>
+    <description><![CDATA[This package is the current version of Canva's Affinity Studio app - a fully reimagined professional design app that combines photo editing, vector design, and page layout tools in one fast, responsive platform.
+    As of now the downloadable version does not support silent installation yet (you could create your own MSI using the `/default` switch and afterwards install with msiexec /passive /i <filename.msi>).
+    ]]></description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>

@@ -2,8 +2,8 @@
 $ErrorActionPreference = 'Stop';
 
 # package download information
-$url64      = 'https://edge.elgato.com/egc/windows/echw/2.1.0/CameraHub_2.1.0.6409_x64.msi'
-$checksum64 = '440341d1e158e29a15f2b6872a1322e8ea1a5604c5fffaf0091325ab66b53c97'
+$url64      = 'https://edge.elgato.com/egc/windows/echw/2.2.0/CameraHub_2.2.0.6839_x64.msi'
+$checksum64 = '6fb793d174ae696d7b9bc14152a8f76bbe562fcfd89b686766cadfc4eac17521'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName

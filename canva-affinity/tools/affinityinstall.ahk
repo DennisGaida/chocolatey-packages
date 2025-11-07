@@ -1,4 +1,4 @@
-#Requires AutoHotkey 2.0-a
+#Requires AutoHotkey v2.0
 #SingleInstance force
 SetTitleMatchMode 3
 
@@ -6,6 +6,8 @@ winTitle := "Affinity"
 
 WinWait(winTitle)
 Sleep(1000)
+ControlSend("{Tab}",, winTitle)
+Sleep(100)
 ControlSend("{Tab}",, winTitle)
 Sleep(100)
 ControlSend("{Tab}",, winTitle)

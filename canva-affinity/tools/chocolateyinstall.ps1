@@ -28,6 +28,16 @@ $UpdateNeeded = $InstalledVersion -lt [Version]$Env:ChocolateyPackageVersion
 
 if ($UpdateNeeded -or $Env:ChocolateyForce)
 {
-  Start-Process 'AutoHotkey' "$toolsPath\install.ahk"
+  Write-Host "Starting AutoHotKey in the background...";
+  $ahkExe = 'AutoHotKey'
+  $ahkFile = Join-Path $toolsPath "affinityinstall.ahk"
+  $ahkProc = Start-Process -FilePath $ahkExe `
+                           -ArgumentList $ahkFile `
+                           -PassThru
+
+  $ahkId = $ahkProc.Id
+  Write-Debug "$ahkExe start time:`t$($ahkProc.StartTime.ToShortTimeString())"
+  Write-Debug "Process ID:`t$ahkId"
+
   Install-ChocolateyPackage @packageArgs
 }

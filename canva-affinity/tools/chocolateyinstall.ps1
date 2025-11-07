@@ -1,6 +1,7 @@
 ﻿
 $ErrorActionPreference = 'Stop';
-$url64 = 'https://downloads.affinity.studio/Affinity%20x64.exe'
+$url64    = 'https://downloads.affinity.studio/Affinity%20x64.exe'
+$toolsPath = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -9,7 +10,7 @@ $packageArgs = @{
 
   softwareName   = 'Affinity'
 
-  checksum64     = '26194FB7AB0C83754549C99951B2DBBDC0361278172D02BB55EAF6B42A100409'
+  checksum64     = '255BB7E688BC68818513A469F6BEC75EF48A4FDB3956E37ED33411CDFAC3E50D'
   checksumType64 = 'sha256'
 
   validExitCodes = @(0)
@@ -27,5 +28,6 @@ $UpdateNeeded = $InstalledVersion -lt [Version]$Env:ChocolateyPackageVersion
 
 if ($UpdateNeeded -or $Env:ChocolateyForce)
 {
+  Start-Process 'AutoHotkey' "$toolsPath\install.ahk"
   Install-ChocolateyPackage @packageArgs
 }

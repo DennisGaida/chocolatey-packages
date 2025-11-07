@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>canva-affinity</id>
-    <version>3.0.0</version>
+    <version>3.0.1</version>
     <owners>Dennis Gaida</owners>
     <title>Canva Affinity</title>
     <authors>Canva</authors>
@@ -16,6 +16,9 @@
     <description><![CDATA[This package is the current version of Canva's Affinity Studio app - a fully reimagined professional design app that combines photo editing, vector design, and page layout tools in one fast, responsive platform.
     As of now the downloadable version does not support silent installation yet (you could create your own MSI using the `/default` switch and afterwards install with msiexec /passive /i <filename.msi>).
     ]]></description>
+    <dependencies>
+      <dependency id="autohotkey.portable" version="2.0.0" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />

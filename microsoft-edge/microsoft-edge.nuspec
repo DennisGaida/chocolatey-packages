@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>microsoft-edge</id>
-    <version>145.0.3800.58</version>
+    <version>145.0.3800.65</version>
     <owners>Dennis Gaida</owners>
     <title>Microsoft Edge</title>
     <authors>Microsoft</authors>

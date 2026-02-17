@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>ente-auth</id>
-    <version>4.4.15</version>
+    <version>4.4.17</version>
     <owners>Dennis Gaida</owners>
     <title>Ente Auth</title>
     <authors>ente Technologies</authors>

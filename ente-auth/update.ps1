@@ -1,5 +1,5 @@
 Import-Module au
-$release_url           = "https://api.github.com/repos/ente-io/ente/releases?per_page=10"
+$release_url           = "https://api.github.com/repos/ente-io/ente/releases?per_page=40"
 $ente_auth_tag_prefix  = "auth-v"
 
 function global:au_SearchReplace {
@@ -24,6 +24,10 @@ function global:au_GetLatest {
 
   # filter on the auth tag prefix since in this mono repo there are all ente releases, also filter out prereleases
   $auth_releases = $json_data | Where-Object {$_.name -like "$ente_auth_tag_prefix*" -and $_.prerelease -ne $true}
+
+  if ($auth_releases.Count -eq 0) {
+    throw "No releases found with tag prefix $ente_auth_tag_prefix"
+  }
 
   # select the latest release and filter on exe installer
   $current_release = $auth_releases[0]

@@ -8,7 +8,7 @@
     <title>Microsoft Edge</title>
     <authors>Microsoft</authors>
     <projectUrl>https://www.microsoft.com/en-us/edge</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/master/microsoft-edge/icon.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/main/microsoft-edge/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/microsoft-edge</packageSourceUrl>
     <licenseUrl>https://www.microsoft.com/en-us/servicesagreement/</licenseUrl>
     <docsUrl>https://learn.microsoft.com/en-us/microsoft-edge/</docsUrl>

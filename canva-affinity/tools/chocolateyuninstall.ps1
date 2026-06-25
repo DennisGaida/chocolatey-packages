@@ -10,6 +10,7 @@ $packageArgs = @{
 
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs['softwareName']
 if ($key.Count -eq 1) {
+  $packageArgs['silentArgs'] = "$($key[0].PSChildName) /qn /norestart"
   $packageArgs['file'] = ''
   Uninstall-ChocolateyPackage @packageArgs
 } elseif ($key.Count -eq 0) {

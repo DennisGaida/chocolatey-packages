@@ -1,6 +1,6 @@
 ﻿
 $ErrorActionPreference = 'Stop';
-$url32 = 'https://github.com/ente/ente/releases/download/auth-v4.4.23/ente-auth-v4.4.23-installer.exe'
+$url32 = 'https://github.com/ente/ente/releases/download/auth-v4.4.24/ente-auth-v4.4.24-installer.exe'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
@@ -9,7 +9,7 @@ $packageArgs = @{
 
   softwareName   = 'Ente Auth'
 
-  checksum       = '358b7ed81c457437babed7ac93a2787ba3e50941bf8069bacb4caf148d92d254'
+  checksum       = '85b237940c8f0f517786494089ad2849d845671322188302738513dbd80e42b8'
   checksumType   = 'sha256'
 
   silentArgs     = "{0} /VERYSILENT /SUPPRESSMSGBOXES /LOG=`"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`""

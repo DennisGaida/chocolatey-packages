@@ -31,11 +31,14 @@ function global:au_GetLatest {
   # get download URL
   $download_url = $current_release.assets | Where-Object -Property name -like "*installer.exe" | Select-Object -Expand browser_download_url
 
-  # prefer sha256sum-windows, fall back to sha256sum
+  # prefer sha256sum-windows, fall back to sha256sum or SHA256SUMS afterwards
   $checksum_url = $current_release.assets | Where-Object -Property name -eq "sha256sum-windows" | Select-Object -Expand browser_download_url
   if (-not $checksum_url) {
     $checksum_url = $current_release.assets | Where-Object -Property name -eq "sha256sum" | Select-Object -Expand browser_download_url
   }
+  if (-not $checksum_url) {
+    $checksum_url = $current_release.assets | Where-Object -Property name -eq "SHA256SUMS" | Select-Object -Expand browser_download_url
+  } 
 
   $tmpChecksumFile = "$($env:TEMP)\$ente_auth_tag_prefix-sha256"
   Invoke-WebRequest $checksum_url -OutFile $tmpChecksumFile

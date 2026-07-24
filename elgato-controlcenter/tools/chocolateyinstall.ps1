@@ -15,7 +15,12 @@ $packageArgs = @{
   checksum64     = $checksum64
   checksumType64 = 'sha256'
 
-  silentArgs     = "/quiet /lv `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`""
+  # The vendor MSI's LaunchConditions checks WIX_IS_NETFRAMEWORK_481_OR_LATER_INSTALLED,
+  # but never sets that property from its own (correctly detected) WIXNETFX4RELEASEINSTALLED
+  # search result - so the condition is always false and the MSI refuses to install via
+  # msiexec at all (silent or not), even when .NET 4.8.1 is genuinely present. Since this
+  # package depends on netfx-4.8.1, it's safe to pass the property explicitly.
+  silentArgs     = "/quiet /lv `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`" WIX_IS_NETFRAMEWORK_481_OR_LATER_INSTALLED=1"
   validExitCodes = @(0, 3010, 1641)
 }
 

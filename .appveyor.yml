@@ -71,6 +71,9 @@ build_script:
     # Guard against a prior failed run leaving uncommitted/stale changes in the
     # workspace, which breaks AU's internal `git pull` sync and can cause the
     # same package version to be rebuilt & pushed repeatedly (409 Conflict).
+    # (git writes normal progress info to stderr, which PowerShell's default
+    # 'Stop' ErrorActionPreference for build steps treats as terminating.)
+    $ErrorActionPreference = 'Continue'
     git fetch origin main
     git reset --hard origin/main
     git clean -fdx

@@ -68,6 +68,14 @@ install:
     
 build_script:
 - ps: |
+    # Guard against a prior failed run leaving uncommitted/stale changes in the
+    # workspace, which breaks AU's internal `git pull` sync and can cause the
+    # same package version to be rebuilt & pushed repeatedly (409 Conflict).
+    git fetch origin main
+    git reset --hard origin/main
+    git clean -fdx
+
+- ps: |
     $ErrorActionPreference = 'Continue'
 
     if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }

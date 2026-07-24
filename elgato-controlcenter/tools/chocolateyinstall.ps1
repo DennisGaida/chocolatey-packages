@@ -2,8 +2,8 @@
 $ErrorActionPreference = 'Stop';
 
 # package download information
-$url64      = 'https://edge.elgato.com/egc/windows/eccw/1.8.2/ControlCenter_1.8.2.714_x64.msi'
-$checksum64 = '63e05035eac3f98255f24827d1dcfb47a1e12ebdfd04b53735b2cd0b6a3ac9fe'
+$url64      = 'https://edge.elgato.com/egc/windows/eccw/1.9/Elgato.ControlCenter_1.9.0.818_x64.msi'
+$checksum64 = '8b172310722dedd241a51e4138423587040fb171868f84712c1429599dc68400'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName

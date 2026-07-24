@@ -54,7 +54,8 @@ install:
 - git --version
 - choco --version
 - ps: |
-    git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
+    # majkinetor/au is archived (frozen at 2022.10.24); chocolatey-community/chocolatey-au is the maintained continuation
+    git clone -q https://github.com/chocolatey-community/chocolatey-au.git $Env:TEMP/au
     . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
 
 - ps: |

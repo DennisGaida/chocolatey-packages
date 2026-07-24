@@ -54,9 +54,25 @@ install:
 - git --version
 - choco --version
 - ps: |
-    # majkinetor/au is archived (frozen at 2022.10.24); chocolatey-community/chocolatey-au is the maintained continuation
+    # majkinetor/au is archived (frozen at 2022.10.24); chocolatey-community/chocolatey-au is the maintained continuation.
+    # NOTE: we call build.ps1 -Install directly instead of the repo's own scripts/Install-AU.ps1 -
+    # that wrapper references a build output path (code_drop\temp\chocolateyPackage\...) that
+    # doesn't match what build.ps1 actually produces for the current tagged release, so it fails
+    # with "term not recognized". This replicates its version-resolution logic against the working
+    # -Install switch instead.
     git clone -q https://github.com/chocolatey-community/chocolatey-au.git $Env:TEMP/au
-    . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
+    Push-Location $Env:TEMP/au
+
+    $auVersion = $Env:au_version
+    if ([string]::IsNullOrWhiteSpace($auVersion)) {
+        $auVersion = (git tag | ForEach-Object { [version]$_ } | Sort-Object -Descending | Select-Object -First 1).ToString()
+    } elseif (-not [version]::TryParse($auVersion, [ref]$null)) {
+        git fetch -q origin "${auVersion}:${auVersion}"
+    }
+    git checkout -q $auVersion
+
+    ./build.ps1 -Install
+    Pop-Location
 
 - ps: |
     "Build info"

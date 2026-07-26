@@ -18,8 +18,11 @@ $packageArgs = @{
   # The vendor MSI's LaunchConditions checks WIX_IS_NETFRAMEWORK_481_OR_LATER_INSTALLED,
   # but never sets that property from its own (correctly detected) WIXNETFX4RELEASEINSTALLED
   # search result - so the condition is always false and the MSI refuses to install via
-  # msiexec at all (silent or not), even when .NET 4.8.1 is genuinely present. Since this
-  # package depends on netfx-4.8.1, it's safe to pass the property explicitly.
+  # msiexec at all (silent or not), even when .NET 4.8.1 is genuinely present. We pass the
+  # property explicitly to work around this. The package depends on netfx-4.8 rather than
+  # netfx-4.8.1, since the 4.8.1 standalone installer refuses to run on OSes older than
+  # Windows 11/Server 2022 (exit code 5100) - .NET 4.8.1 adds no new managed APIs over 4.8,
+  # so the app runs the same either way.
   silentArgs     = "/quiet /lv `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).installer.log`" WIX_IS_NETFRAMEWORK_481_OR_LATER_INSTALLED=1"
   validExitCodes = @(0, 3010, 1641)
 }

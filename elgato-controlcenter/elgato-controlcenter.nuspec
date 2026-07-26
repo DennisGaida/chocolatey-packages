@@ -19,7 +19,7 @@
 ]]></description>
       <releaseNotes>https://help.elgato.com/hc/en-us/sections/4586833941261-Elgato-Control-Center-Release-Notes</releaseNotes>
     <dependencies>
-      <dependency id="netfx-4.8.1" />
+      <dependency id="netfx-4.8" />
     </dependencies>
   </metadata>
   <files>

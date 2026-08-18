@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>canva-affinity</id>
-    <version>3.2.2.1</version>
+    <version>3.2.2.2</version>
     <owners>Dennis Gaida</owners>
     <title>Canva Affinity</title>
     <authors>Canva</authors>
@@ -11,11 +11,12 @@
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/main/canva-affinity</packageSourceUrl>
     <licenseUrl>https://www.canva.com/policies/</licenseUrl>
     <docsUrl>https://www.affinity.studio/help/</docsUrl>
+    <releaseNotes>https://www.affinity.studio/help/release-notes/</releaseNotes>
     <tags>affinity canva vector photoeditor pagelayout</tags>
     <summary>A fully reimagined professional design app combining photo editing, vector design, and page layout in one platform.</summary>
     <description><![CDATA[This package is the current version of Canva's Affinity Studio app - a fully reimagined professional design app that combines photo editing, vector design, and page layout tools in one fast, responsive platform.
 
-As of now the downloadable version does not support silent installation yet (you could create your own MSI using the `/default` switch and afterwards install with msiexec /passive /i <filename.msi>).
+This package extracts the MSI embedded in the official installer and installs it silently, so no manual interaction is required.
 ]]></description>
   </metadata>
   <files>

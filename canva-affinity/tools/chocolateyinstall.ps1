@@ -100,11 +100,14 @@ if ((-not $InstalledVersion) -or ($InstalledVersion -lt [Version]$env:Chocolatey
   }
 
   try {
-    $logFile = Join-Path $env:TEMP "$($env:ChocolateyPackageName).install.log"
-    $exitCode = (Start-Process msiexec -ArgumentList "/i `"$msiPath`" /qn /norestart /l*v `"$logFile`"" -Wait -PassThru).ExitCode
-    if ($exitCode -ne 0) {
-      throw "MSI installation failed with exit code $exitCode. Log: $logFile"
+    $packageArgs = @{
+      packageName    = $env:ChocolateyPackageName
+      fileType       = 'msi'
+      file           = $msiPath
+      silentArgs     = '/qn /norestart'
+      validExitCodes = @(0)
     }
+    Install-ChocolateyInstallPackage @packageArgs
   } finally {
     Remove-Item $msiPath -ErrorAction SilentlyContinue
     Remove-Item $exeFile -ErrorAction SilentlyContinue

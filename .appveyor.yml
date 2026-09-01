@@ -1,4 +1,5 @@
-# AU template: https://github.com/majkinetor/au-packages-template
+# AU template: https://github.com/chocolatey-community/chocolatey-packages-template
+# (community-maintained continuation of the archived majkinetor/au-packages-template)
 
 version: '{build}'
 max_jobs: 1

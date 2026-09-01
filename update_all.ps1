@@ -1,4 +1,5 @@
-# AU Packages Template: https://github.com/majkinetor/au-packages-template
+# AU Packages Template: https://github.com/chocolatey-community/chocolatey-packages-template
+# (community-maintained continuation of the archived majkinetor/au-packages-template)
 
 param([string[]] $Name, [string] $ForcedPackages, [string] $Root = $PSScriptRoot)
 

@@ -9,7 +9,7 @@
     <projectUrl>https://openlogi.org/en</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/main/openlogi/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/main/openlogi</packageSourceUrl>
-    <licenseUrl>https://github.com/AprilNEA/OpenLogi/blob/main/LICENSE-MIT</licenseUrl>
+    <licenseUrl>https://github.com/AprilNEA/OpenLogi/blob/master/LICENSE-MIT</licenseUrl>
     <projectSourceUrl>https://github.com/AprilNEA/OpenLogi</projectSourceUrl>
     <docsUrl>https://github.com/AprilNEA/OpenLogi#readme</docsUrl>
     <releaseNotes>https://github.com/AprilNEA/OpenLogi/releases</releaseNotes>

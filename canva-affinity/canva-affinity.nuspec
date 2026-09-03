@@ -7,11 +7,12 @@
     <title>Canva Affinity</title>
     <authors>Canva</authors>
     <projectUrl>https://www.affinity.studio/</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/main/canva-affinity/icon.svg</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/DennisGaida/chocolatey-packages@eabf98dc8331b255d3c01365145918a8335f927b/canva-affinity/icon.svg</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/main/canva-affinity</packageSourceUrl>
     <licenseUrl>https://www.canva.com/policies/</licenseUrl>
     <docsUrl>https://www.affinity.studio/help/</docsUrl>
     <releaseNotes>https://www.affinity.studio/help/release-notes/</releaseNotes>
+    <copyright>Copyright (c) Canva</copyright>
     <tags>affinity canva vector photoeditor pagelayout</tags>
     <summary>A fully reimagined professional design app combining photo editing, vector design, and page layout in one platform.</summary>
     <description><![CDATA[This package is the current version of Canva's Affinity Studio app - a fully reimagined professional design app that combines photo editing, vector design, and page layout tools in one fast, responsive platform.

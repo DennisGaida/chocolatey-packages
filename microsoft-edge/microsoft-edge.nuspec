@@ -8,10 +8,11 @@
     <title>Microsoft Edge</title>
     <authors>Microsoft</authors>
     <projectUrl>https://www.microsoft.com/en-us/edge</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/main/microsoft-edge/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/DennisGaida/chocolatey-packages@eabf98dc8331b255d3c01365145918a8335f927b/microsoft-edge/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/master/microsoft-edge</packageSourceUrl>
     <licenseUrl>https://www.microsoft.com/en-us/servicesagreement/</licenseUrl>
     <docsUrl>https://learn.microsoft.com/en-us/microsoft-edge/</docsUrl>
+    <copyright>Copyright (c) Microsoft Corporation</copyright>
     <tags>edge microsoft browser stable chromium</tags>
     <summary>Microsoft Edge browser, based on the Chromium open source browser.</summary>
     <description><![CDATA[This package is the stable version of the Microsoft Edge browser, based on the Chromium open source browser. Portions of this browser are based on Third Party Open source software. The entire list of Microsoft utilized open source is available at https://thirdpartysource.microsoft.com/ while the portions and licenses specific to Edge are available at edge://credits/ once installed.

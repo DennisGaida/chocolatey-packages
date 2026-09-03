@@ -7,12 +7,13 @@
     <title>OpenLogi</title>
     <authors>AprilNEA</authors>
     <projectUrl>https://openlogi.org/en</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/DennisGaida/chocolatey-packages/main/openlogi/icon.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/DennisGaida/chocolatey-packages@eabf98dc8331b255d3c01365145918a8335f927b/openlogi/icon.png</iconUrl>
     <packageSourceUrl>https://github.com/DennisGaida/chocolatey-packages/tree/main/openlogi</packageSourceUrl>
     <licenseUrl>https://github.com/AprilNEA/OpenLogi/blob/master/LICENSE-MIT</licenseUrl>
     <projectSourceUrl>https://github.com/AprilNEA/OpenLogi</projectSourceUrl>
     <docsUrl>https://github.com/AprilNEA/OpenLogi#readme</docsUrl>
     <releaseNotes>https://github.com/AprilNEA/OpenLogi/releases</releaseNotes>
+    <copyright>Copyright (c) AprilNEA</copyright>
     <tags>openlogi logitech hidpp mouse keyboard remap options-plus</tags>
     <summary>A native, local-first alternative to Logitech Options+, written in Rust. Remap buttons, DPI, and SmartShift over HID++.</summary>
     <description><![CDATA[OpenLogi is a native, local-first alternative to Logitech Options+, written in Rust. It talks to Logitech HID++ peripherals over Logi Bolt and Unifying receivers, Bluetooth-direct connections, or USB cables, without running Logi Options+.

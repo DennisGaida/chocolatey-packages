@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>openlogi</id>
-    <version>0.7.1</version>
+    <version>0.8.3</version>
     <owners>Dennis Gaida</owners>
     <title>OpenLogi</title>
     <authors>AprilNEA</authors>
@@ -16,11 +16,12 @@
     <copyright>Copyright (c) AprilNEA</copyright>
     <tags>openlogi logitech hidpp mouse keyboard remap options-plus</tags>
     <summary>A native, local-first alternative to Logitech Options+, written in Rust. Remap buttons, DPI, and SmartShift over HID++.</summary>
-    <description><![CDATA[OpenLogi is a native, local-first alternative to Logitech Options+, written in Rust. It talks to Logitech HID++ peripherals over Logi Bolt and Unifying receivers, Bluetooth-direct connections, or USB cables, without running Logi Options+.
+    <description><![CDATA[A native, local-first alternative to Logitech Options+, written in Rust. Remap buttons, drive DPI and SmartShift, and switch profiles per app, without a Logitech account, telemetry, or the official Options+ install.
 
-Remap buttons, drive DPI and SmartShift, and switch profiles per app, without a Logitech account, telemetry, or the official Options+ install. Everything stays local: bindings live in a plain TOML file, and device changes are written straight to the device over HID++.
 
-This package installs the current version of OpenLogi.
+
+**NOTE**: This is an automatically updated package. If you find it is out of date by more than a week, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+
 ]]></description>
   </metadata>
   <files>

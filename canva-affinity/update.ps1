@@ -1,7 +1,15 @@
 Import-Module au
+. (Join-Path $PSScriptRoot 'tools\Get-EmbeddedMsi.ps1')
 $download_url = 'https://downloads.affinity.studio/Affinity%20x64.exe'
 
-function global:au_SearchReplace { @{} }
+function global:au_SearchReplace {
+  @{
+    'tools\chocolateyInstall.ps1' = @{
+      "(?i)(^\s*[$]checksum64\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum64)'"
+      "(?i)(^\s*[$]checksumMsi\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumMsi)'"
+    }
+  }
+}
 
 function global:au_GetLatest {
   # The installer URL never changes, but the embedded file version does.
@@ -102,7 +110,29 @@ function global:au_GetLatest {
       $fvMS = [BitConverter]::ToUInt32($vbuf, $i + 8)
       $fvLS = [BitConverter]::ToUInt32($vbuf, $i + 12)
       $version = '{0}.{1}.{2}' -f (($fvMS -shr 16) -band 0xFFFF), ($fvMS -band 0xFFFF), (($fvLS -shr 16) -band 0xFFFF)
-      return @{ URL64 = $download_url; Version = $version }
+
+      $Latest = @{ URL64 = $download_url; Version = $version }
+
+      # Affinity publishes no checksums for this rolling URL, so the only way to
+      # pin one is to compute it ourselves. Only pay for the full ~630 MB download
+      # when the version actually moved - not on every unchanged check.
+      $nuspecPath = Join-Path $PSScriptRoot 'canva-affinity.nuspec'
+      $currentVersion = ([xml](Get-Content $nuspecPath)).package.metadata.version
+      if ($version -ne $currentVersion) {
+        Write-Host "Version changed ($currentVersion -> $version); downloading installer to compute checksums..."
+        $exeFile = Join-Path $env:TEMP 'canva-affinity-au.exe'
+        $msiFile = Join-Path $env:TEMP 'canva-affinity-au.msi'
+        try {
+          Invoke-WebRequest -Uri $download_url -OutFile $exeFile
+          $Latest.Checksum64 = (Get-FileHash -Path $exeFile -Algorithm SHA256).Hash.ToLower()
+          Get-EmbeddedMsi -ExeFile $exeFile -MsiFile $msiFile
+          $Latest.ChecksumMsi = (Get-FileHash -Path $msiFile -Algorithm SHA256).Hash.ToLower()
+        } finally {
+          Remove-Item $exeFile, $msiFile -ErrorAction SilentlyContinue
+        }
+      }
+
+      return $Latest
     }
   }
   throw "VS_FIXEDFILEINFO not found in version resource"

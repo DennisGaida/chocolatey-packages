@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 $url64 = 'https://downloads.affinity.studio/Affinity%20x64.exe'
 
 # The download URL is not version-locked (it always serves the current build), so

@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>canva-affinity</id>
-    <version>3.2.2</version>
+    <version>3.2.3</version>
     <owners>Dennis Gaida</owners>
     <title>Canva Affinity</title>
     <authors>Canva</authors>
@@ -15,11 +15,7 @@
     <copyright>Copyright (c) Canva</copyright>
     <tags>affinity canva vector photoeditor pagelayout</tags>
     <summary>A fully reimagined professional design app combining photo editing, vector design, and page layout in one platform.</summary>
-    <description><![CDATA[This package is the current version of Canva's Affinity Studio app - a fully reimagined professional design app that combines photo editing, vector design, and page layout tools in one fast, responsive platform.
-
-This package extracts the MSI embedded in the official installer and installs it silently, so no manual interaction is required.
-
-Affinity is free to use under Canva and requires signing in with a Canva account.
+    <description><![CDATA[This package is the current version of Canva's Affinity Studio app - a fully reimagined professional design app that combines photo editing, vector design, and page layout tools in one fast, responsive platform. Free to use with a Canva account.
 ]]></description>
   </metadata>
   <files>

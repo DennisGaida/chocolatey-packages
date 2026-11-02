@@ -4,9 +4,9 @@ $url64 = 'https://downloads.affinity.studio/Affinity%20x64.exe'
 # The download URL is not version-locked (it always serves the current build), so
 # these checksums are recomputed and pinned by update.ps1 every time a new version
 # is packaged - see au_GetLatest there.
-$checksum64     = '9e05d95a27d5e1249a9ba1e8b3ea5731988c2ab481f31aea1df13c88a025018b'
+$checksum64     = '618f7b18f99176e5492a2253af7524b7fd702dfe6044403ca227cd44fc76336d'
 $checksumType64 = 'sha256'
-$checksumMsi    = 'e148598f2dc86aca7de39ceb79ab57ee15417fc76c3abb7bfbe2b93051d1287d'
+$checksumMsi    = '9fcd7ac6466e174e52b2f60f77f9fe54a05dfa318eb2a982a94608bff0a9b5e0'
 
 $InstallPath = Join-Path $env:ProgramFiles 'Affinity\Affinity\Affinity.exe'
 

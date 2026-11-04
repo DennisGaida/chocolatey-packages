@@ -2,8 +2,8 @@
 $ErrorActionPreference = 'Stop';
 
 # package download information
-$url64      = 'https://github.com/AprilNEA/OpenLogi/releases/download/v0.8.20/OpenLogi-v0.8.20-windows-x86_64.msi'
-$checksum64 = 'a5cf79e582ca946236e095f5239ce9c477dd0aad931ab21ba9fd7ebd9b6ec7c4'
+$url64      = 'https://github.com/AprilNEA/OpenLogi/releases/download/v0.9.0/OpenLogi-v0.9.0-windows-x86_64.msi'
+$checksum64 = 'f6ac399e7ab2935866f09dab16258a4a519ca32678d8e1b48ab8a259d6e366e8'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName

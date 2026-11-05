@@ -1,7 +1,7 @@
 ﻿
 $ErrorActionPreference = 'Stop';
-$url32 = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d2cf7bd2-bdff-4498-aabc-f92bd2d4a9a1/MicrosoftEdgeEnterpriseX86.msi'
-$url64 = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/d0a4e3fc-604a-4d46-8fd6-e90de2df72f6/MicrosoftEdgeEnterpriseX64.msi'
+$url32 = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/0205b2f0-6176-4a00-ae49-7ab12a2ed7bf/MicrosoftEdgeEnterpriseX86.msi'
+$url64 = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/a6fb1f54-34b5-43f2-878f-b6c3f3550143/MicrosoftEdgeEnterpriseX64.msi'
 
 $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 . $toolsDir\helpers.ps1
@@ -16,9 +16,9 @@ $packageArgs = @{
 
   softwareName   = 'Microsoft Edge'
 
-  checksum       = '8FC2F8E437980DDC0FEED79398295DD16A5B0CAB370DFD5D1D5D82340278EBE1'
+  checksum       = 'A7DD7D572555533C5D59F1AA93E01AB3FE0A434DBD45C792D5C0C8F56C955B67'
   checksumType   = 'sha256'
-  checksum64     = '784051EBFCC8B28569127F381D515766866C4925312D35C52293382B97EEF2FB'
+  checksum64     = '14D79DF658D7AD4B8E8D2F8D2456D10B98A860890DA2352A394E346CBDB32FE7'
   checksumType64 = 'sha256'
 
   silentArgs     = "{0} /qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`"" -f (CheckNoDestop $pp)
